@@ -27,18 +27,28 @@ inquirer.prompt ([
     },
 ])
 .then((answers) => {
-    const readME = writeToFile(answers);
+    // const write = writeToFile(answers);
+    const generateReadMe = readMe(answers);
+    fs.writeFile("readme.md", generateReadMe, (err) =>
+    err ? console.log(err) : console.log("success"))
+    console.log(answers);
 });
 
+const readMe = ({title, description, installation, usage}) =>
+`#${title}
+##${description}
+##${installation}
+##${usage}`
+
 // TODO: Create a function to write README file
-function writeToFile(data, fileName) {
-    console.log(data);
-    console.log(fileName);
-    console.log(generateMarkdown);
-    fs.writeFile("readme.md", `${data}`, (err) => 
-        err ? console.log(err) : console.log("success")
-    );
-};
+// function writeToFile(data, fileName) {
+//     console.log(data);
+//     console.log(fileName);
+//     console.log(generateMarkdown);
+//     fs.writeFile("readme.md", `${generateMarkdown}`, (err) => 
+//         err ? console.log(err) : console.log("success")
+//     );
+// };
 // TODO: Create a function to initialize app
 // function init() {}
 
