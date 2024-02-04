@@ -27,30 +27,40 @@ inquirer.prompt ([
     },
 ])
 .then((answers) => {
-    // const write = writeToFile(answers);
-    const generateReadMe = readMe(answers);
-    fs.writeFile("readme.md", generateReadMe, (err) =>
-    err ? console.log(err) : console.log("success"))
-    console.log(answers);
+    const write = writeToFile(answers);
+    // const generateReadMe = readMe(answers);
+    // fs.writeFile("readme.md", generateReadMe, (err) =>
+    // err ? console.log(err) : console.log("success"))
+    // console.log(answers);
 });
 
-const readMe = ({title, description, installation, usage}) =>
-`#${title}
-##${description}
-##${installation}
-##${usage}`
+// const readMe = ({title, description, installation, usage}) =>
+// `#${title}
+// content
+// ##${description}
+// content
+// ##${installation}
+// content
+// ##${usage}
+// content`; 
 
 // TODO: Create a function to write README file
-// function writeToFile(data, fileName) {
-//     console.log(data);
-//     console.log(fileName);
-//     console.log(generateMarkdown);
-//     fs.writeFile("readme.md", `${generateMarkdown}`, (err) => 
-//         err ? console.log(err) : console.log("success")
-//     );
-// };
+function writeToFile(fileName, data) {
+        return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+    // console.log(data);
+    // console.log(fileName);
+    // console.log(generateMarkdown);
+    // fs.writeFile("readme.md", `${generateMarkdown}`, (err) => 
+    //     err ? console.log(err) : console.log("success")
+    // );
+};
 // TODO: Create a function to initialize app
-// function init() {}
+function init() {
+    inquirer.prompt(questions).then((inquirerResponses) => {
+        console.log("Generating README...");
+        writeToFile("readme.md", generateMarkdown({...inquirerResponses }));
+    });
+}
 
 // Function call to initialize app
-// init();
+init();
