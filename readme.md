@@ -1,11 +1,8 @@
-function generateMarkdown(data) {
-  return `# ${data.title}
+# asdf
 
   ## Description:
-  ${data.description}
+  asdf
   ## Installation:
-  ${data.installation}
+  asdf
   ## Usage:
-  ${data.usage}`
-  // return `# ${data.title} # ${data.Description} # ${data.Installation} # ${data.Usage}`;
-}
+  asdf

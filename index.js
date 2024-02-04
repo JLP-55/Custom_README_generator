@@ -2,9 +2,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+const path = require("path");
 
 // TODO: Create an array of questions for user input
-inquirer.prompt ([
+const questions = [
     {
         type: "input",
         name: "title",
@@ -25,14 +26,14 @@ inquirer.prompt ([
         name: "usage",
         message: "How should your project be used?",
     },
-])
-.then((answers) => {
-    const write = writeToFile(answers);
-    // const generateReadMe = readMe(answers);
-    // fs.writeFile("readme.md", generateReadMe, (err) =>
-    // err ? console.log(err) : console.log("success"))
-    // console.log(answers);
-});
+]
+// .then((answers) => {
+//     const write = writeToFile(answers);
+//     // const generateReadMe = readMe(answers);
+//     // fs.writeFile("readme.md", generateReadMe, (err) =>
+//     // err ? console.log(err) : console.log("success"))
+//     // console.log(answers);
+// });
 
 // const readMe = ({title, description, installation, usage}) =>
 // `#${title}
@@ -46,6 +47,7 @@ inquirer.prompt ([
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    console.log(fileName);
         return fs.writeFileSync(path.join(process.cwd(), fileName), data);
     // console.log(data);
     // console.log(fileName);
