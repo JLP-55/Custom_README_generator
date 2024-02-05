@@ -4,6 +4,10 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const path = require("path");
 
+/*
+Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+*/
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -25,6 +29,36 @@ const questions = [
         type: "input",
         name: "usage",
         message: "How should your project be used?",
+    },
+    {
+        type: "input",
+        name: "contribution",
+        message: "Are there any contributors to the code?",
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "How should your project be used?",
+    },
+    {
+        type: "checkbox",
+        name: "licence",
+        message: "What licence would you like to use?",
+        choices: [
+            "Apache License 2.0",
+            "GNU General Public License v3.0",
+            "MIT License",
+            "BSD 2-Clause License",
+            "BSD 3-Clause License",
+            "Boost Software License 1.0",
+            "Creative Commons Zero v1.0 Universal",
+            "Eclipse Public License 2.0",
+            "GNU Affero General Public License v3.0",
+            "GNU General Public License v2.0",
+            "GNU Lesser General Public License v2.1",
+            "Mozilla Public License 2.0",
+            "The Unlicense",
+        ],
     },
 ]
 // .then((answers) => {
@@ -60,6 +94,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((inquirerResponses) => {
         console.log("Generating README...");
+        console.log(inquirerResponses);
+        console.log(inquirerResponses.licence);
         writeToFile("readme.md", generateMarkdown({...inquirerResponses }));
     });
 }
