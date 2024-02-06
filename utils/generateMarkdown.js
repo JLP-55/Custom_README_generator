@@ -83,9 +83,6 @@ function renderLicenseLink(licence) {
   }
 };
 
-// const element = array[i];
-// renderLicenseLink();
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 // function renderLicenseSection(license) {}
@@ -106,24 +103,27 @@ function generateMarkdown(data) {
   // Will return this content for the readme file if the user doesn't chose a licence.
   if (userSelectionBadge === "" || userSelectionLink === "") {
     return `# ${data.title}
-    ## Table of contents:
-    <ol>
-      <li>
-        <a href="#description">Description</a>
-      </li>
-      <li>
-        <a href="#installation">Installation</a>
-      </li>
-      <li>
-        <a href="#usage">Usage:</a>
-      </li>
-      <li>
-        <a href="#contribution">Contribution</a>
-      </li>
-      <li>
-        <a href="#tests">Tests</a>
-      </li>
-    </ol>
+  ## Table of contents:
+  <ol>
+    <li>
+      <a href="#description">Description</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#usage">Usage:</a>
+    </li>
+    <li>
+      <a href="#contribution">Contribution</a>
+    </li>
+    <li>
+      <a href="#tests">Tests</a>
+    </li>
+    <li>
+      <a href="#questions">Questions</a>
+    </li>
+  </ol>
 
   ## Description:
   ${data.description}
@@ -135,14 +135,22 @@ function generateMarkdown(data) {
   ${data.contribution}
   ## Tests:
   ${data.test}
-  `  
+  ## Questions:
+  <ul>
+    <li>
+      <a href= https://github.com/${data.github}>${data.github}</a>
+    </li>
+    <li>
+    Reach me at my email: ${data.email}
+    </li>
+  </ul>
+  `
   };
 
   // Will return this content for the readme if the user does chose a licence.
   return `# ${data.title}
   ${userSelectionBadge}
-  \nRead about your chosen licence here:
-  \n${(userSelectionLink)}
+
   ## Table of contents:
   <ol>
     <li>
@@ -163,6 +171,9 @@ function generateMarkdown(data) {
     <li>
       <a href="#licence">Licence</a>
     </li>
+    <li>
+      <a href="#questions">Questions</a>
+    </li>
   </ol>
 
   ## Description:
@@ -176,9 +187,18 @@ function generateMarkdown(data) {
   ## Tests:
   ${data.test}
   ## Licence:
-  ${(data.licence)}
+  \n${(userSelectionLink)}
+  \nClick to read about your chosen licence
+  ## Questions:\n
+  <ul>
+    <li>
+    <a href= https://github.com/${data.github}>${data.github}</a>
+    </li>
+    <li>
+      Reach me at my email: ${data.email}
+    </li>
+  </ul>
   `  
 };
 
 module.exports = generateMarkdown;
-

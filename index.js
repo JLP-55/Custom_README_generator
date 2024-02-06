@@ -37,6 +37,16 @@ const questions = [
         message: "How should your project be used?",
     },
     {
+        type: "input",
+        name: "github",
+        message: "Enter your Github userName",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email?",
+    },
+    {
         type: "checkbox",
         name: "licence",
         message: "What licence would you like to use?",
@@ -74,7 +84,7 @@ function init() {
         // The spread operator gives acces to all items from inquirerResponse. 
         writeToFile("readme.md", generateMarkdown({...inquirerResponse }));
     });
-}
+};
 
 // Function call to initialize app
 init();

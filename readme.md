@@ -1,9 +1,6 @@
 # d
   ![Static Badge](https://img.shields.io/badge/Licence-Apache_licence--2.0-blue)
-  
-Read about your chosen licence here:
-  
-[Apache License 2.0](https://opensource.org/license/apache-2-0/)
+
   ## Table of contents:
   <ol>
     <li>
@@ -24,6 +21,9 @@ Read about your chosen licence here:
     <li>
       <a href="#licence">Licence</a>
     </li>
+    <li>
+      <a href="#questions">Questions</a>
+    </li>
   </ol>
 
   ## Description:
@@ -37,5 +37,18 @@ Read about your chosen licence here:
   ## Tests:
   d
   ## Licence:
-  Apache License 2.0
+  
+[Apache License 2.0](https://opensource.org/license/apache-2-0/)
+  
+Click to read about your chosen licence
+  ## Questions:
+
+  <ul>
+    <li>
+    <a href= https://github.com/JLP-55>JLP-55</a>
+    </li>
+    <li>
+      Reach me at my email: asdf
+    </li>
+  </ul>
   
