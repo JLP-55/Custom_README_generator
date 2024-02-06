@@ -4,10 +4,6 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const path = require("path");
 
-/*
-Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-*/
-
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -60,35 +56,12 @@ const questions = [
             "The Unlicense",
         ],
     },
-]
-// .then((answers) => {
-//     const write = writeToFile(answers);
-//     // const generateReadMe = readMe(answers);
-//     // fs.writeFile("readme.md", generateReadMe, (err) =>
-//     // err ? console.log(err) : console.log("success"))
-//     // console.log(answers);
-// });
-
-// const readMe = ({title, description, installation, usage}) =>
-// `#${title}
-// content
-// ##${description}
-// content
-// ##${installation}
-// content
-// ##${usage}
-// content`; 
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log(fileName);
         return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-    // console.log(data);
-    // console.log(fileName);
-    // console.log(generateMarkdown);
-    // fs.writeFile("readme.md", `${generateMarkdown}`, (err) => 
-    //     err ? console.log(err) : console.log("success")
-    // );
 };
 // TODO: Create a function to initialize app
 function init() {

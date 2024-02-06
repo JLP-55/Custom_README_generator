@@ -17,11 +17,8 @@ const licenceArray = [
 ];
 
 // If there is no license, return an empty string
-// const element = array[i];
 function renderLicenseBadge(licence) {
   if (licence === licenceArray[0]) {
-    // return "[![licence: Apache licence 2.0 (https://img.shields.io/badge/any_text-you_like-blue)]"
-    // return "![Static Badge](https://img.shields.io/badge/Licence-" + licenceArray[0] + "-blue)"
     return "![Static Badge](https://img.shields.io/badge/Licence-Apache_licence--2.0-blue)"
   } else if (licence === licenceArray[1]) {
     return "![Static Badge](https://img.shields.io/badge/Licence-GNU_General_Public_Licence--v3.0-blue)"
@@ -50,12 +47,7 @@ function renderLicenseBadge(licence) {
   } else {
     return ""
   }
-}
-
-// switch (licenceArray) {
-//   case "Apache License 2.0",
-//   return
-// }
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -102,6 +94,7 @@ function renderLicenseLink(licence) {
 function generateMarkdown(data) {
   var userSelectionBadge = "";
   var userSelectionLink = "";
+  // Iterate through each licence function to return items based on the users selected licence and assign them to the above variables.
   for (let i = 0; i < data.licence.length; i++) {
     userSelectionBadge += renderLicenseBadge(data.licence[i]);  
   }
@@ -110,17 +103,68 @@ function generateMarkdown(data) {
     userSelectionLink += renderLicenseLink(data.licence[i]);
   };
 
+  // Will return this content for the readme file if the user doesn't chose a licence.
+  if (userSelectionBadge === "" || userSelectionLink === "") {
+    return `# ${data.title}
+    ## Table of contents:
+    <ol>
+      <li>
+        <a href="#description">Description</a>
+      </li>
+      <li>
+        <a href="#installation">Installation</a>
+      </li>
+      <li>
+        <a href="#usage">Usage:</a>
+      </li>
+      <li>
+        <a href="#contribution">Contribution</a>
+      </li>
+      <li>
+        <a href="#tests">Tests</a>
+      </li>
+    </ol>
+
+  ## Description:
+  ${data.description}
+  ## Installation:
+  ${data.installation}
+  ## Usage:
+  ${data.usage}
+  ## Contribution:
+  ${data.contribution}
+  ## Tests:
+  ${data.test}
+  `  
+  };
+
+  // Will return this content for the readme if the user does chose a licence.
   return `# ${data.title}
   ${userSelectionBadge}
   \nRead about your chosen licence here:
   \n${(userSelectionLink)}
   ## Table of contents:
-  \n- Description
-  \n- Installation
-  \n- Usage
-  \n- Contribution
-  \n- Tests
-  \n- Licence
+  <ol>
+    <li>
+      <a href="#description">Description</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#usage">Usage:</a>
+    </li>
+    <li>
+      <a href="#contribution">Contribution</a>
+    </li>
+    <li>
+      <a href="#tests">Tests</a>
+    </li>
+    <li>
+      <a href="#licence">Licence</a>
+    </li>
+  </ol>
+
   ## Description:
   ${data.description}
   ## Installation:
@@ -133,9 +177,8 @@ function generateMarkdown(data) {
   ${data.test}
   ## Licence:
   ${(data.licence)}
-  `
-  // return `# ${data.title} # ${data.Description} # ${data.Installation} # ${data.Usage}`;
-}
-// generateMarkdown();
+  `  
+};
+
 module.exports = generateMarkdown;
-// module.exports = renderLicenseBadge;
+
