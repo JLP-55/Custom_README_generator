@@ -6,9 +6,9 @@ In this weeks challenge for the coding bootcamp, the requirement was to create a
 
 ## Usage
 
-Upon running node "./index.js" the user will be prompted to enter details about their project. The user entered text will appear under the relevant headings in the readme file.
+Upon running "node ./index.js" the user will be prompted to enter details about their project. The user entered text will appear under the relevant headings in the readme file.
 
-link to the deployed application: 
+See the attached video for further usage instructions: [test-video](https://youtu.be/nPB54Syq1w0)
 
 ## Licence
 
