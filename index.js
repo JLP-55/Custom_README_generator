@@ -82,7 +82,7 @@ function init() {
         // In the callback to writeToFile, the parameter fileName becomes the file readme.md,
         // and the parameter data becomes the function generateMarkdown.
         // The spread operator gives acces to all items from inquirerResponse. 
-        writeToFile("readme.md", generateMarkdown({...inquirerResponse }));
+        writeToFile("./user_generated_readme/readme.md", generateMarkdown({...inquirerResponse }));
     });
 };
 
