@@ -60,16 +60,19 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(fileName);
+    // console.log(fileName);
         return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 };
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((inquirerResponses) => {
+    // Run the inquirer.prompt and .then inside the init function and pass in the questions array.
+    inquirer.prompt(questions).then((inquirerResponse) => {
         console.log("Generating README...");
-        console.log(inquirerResponses);
-        console.log(inquirerResponses.licence);
-        writeToFile("readme.md", generateMarkdown({...inquirerResponses }));
+        // console.log(inquirerResponse);
+        // In the callback to writeToFile, the parameter fileName becomes the file readme.md,
+        // and the parameter data becomes the function generateMarkdown.
+        // The spread operator gives acces to all items from inquirerResponse. 
+        writeToFile("readme.md", generateMarkdown({...inquirerResponse }));
     });
 }
 
