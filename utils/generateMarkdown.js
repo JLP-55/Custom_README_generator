@@ -138,10 +138,10 @@ function generateMarkdown(data) {
   ## Questions:
   <ul>
     <li>
-      <a href= https://github.com/${data.github}>${data.github}</a>
+      Check out my Github: <a href= https://github.com/${data.github}>${data.github}</a>
     </li>
     <li>
-    Reach me at my email: ${data.email}
+      Reach me at my email: ${data.email}
     </li>
   </ul>
   `
@@ -192,7 +192,7 @@ function generateMarkdown(data) {
   ## Questions:\n
   <ul>
     <li>
-    <a href= https://github.com/${data.github}>${data.github}</a>
+      Check out my Github: <a href= https://github.com/${data.github}>${data.github}</a>
     </li>
     <li>
       Reach me at my email: ${data.email}

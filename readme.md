@@ -1,4 +1,4 @@
-# d
+# Title
   ![Static Badge](https://img.shields.io/badge/Licence-Apache_licence--2.0-blue)
 
   ## Table of contents:
@@ -27,15 +27,15 @@
   </ol>
 
   ## Description:
-  d
+  Description
   ## Installation:
-  d
+  Installation
   ## Usage:
-  d
+  Usage
   ## Contribution:
-  d
+  Contributors
   ## Tests:
-  d
+  Test
   ## Licence:
   
 [Apache License 2.0](https://opensource.org/license/apache-2-0/)
@@ -45,10 +45,10 @@ Click to read about your chosen licence
 
   <ul>
     <li>
-    <a href= https://github.com/JLP-55>JLP-55</a>
+      Check out my Github: <a href= https://github.com/JLP-55>JLP-55</a>
     </li>
     <li>
-      Reach me at my email: asdf
+      Reach me at my email: test@gmail.con
     </li>
   </ul>
   
